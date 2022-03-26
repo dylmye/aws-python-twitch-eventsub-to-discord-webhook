@@ -1,0 +1,25 @@
+service: aws-python-twitch-eventsub-to-discord
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.8
+
+functions:
+  webhook:
+    handler: handler.webhook
+    events:
+      - http:
+          path: webhook
+          method: POST
+          cors: true
+
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    slim: true
+    useDownloadCache: true
+    useStaticCache: true

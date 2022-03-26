@@ -1,0 +1,8 @@
+name: aws-python-twitch-eventsub-to-discord
+displayName: AWS Twitch EventSub to Discord Webhook
+author: dylmye
+description: This template takes go-live events from Twitch EventSub, and publishes the events through a Discord Webhook.
+keywords: aws, serverless, lambda, python, twitch, discord, webhook, eventsub
+repo: https://github.com/dylmye/aws-python-twitch-eventsub-to-discord-webhook
+license: ISC
+type: template
