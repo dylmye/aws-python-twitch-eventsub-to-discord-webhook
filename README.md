@@ -51,7 +51,7 @@ You need to [subscribe your deployment to a Twitch Event](https://dev.twitch.tv/
 You can invoke your function locally by using the following command:
 
 ```bash
-serverless invoke local --function handler
+serverless invoke local --function webhook
 ```
 
 Which should result in response similar to the following:
