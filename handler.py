@@ -11,7 +11,7 @@ def webhook(event, context):
 
     return_obj = {
         "statusCode": 200,
-        "body": json.dumps({ "executed": False, "rqid": context["aws_request_id"] })
+        "body": json.dumps({ "executed": False, "context": context })
     }
 
     # handle different data shape when using
