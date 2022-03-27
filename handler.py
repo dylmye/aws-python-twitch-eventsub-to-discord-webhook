@@ -18,14 +18,14 @@ def webhook(event, context):
     # aws api gateway vs directly using lambda
     data = event
     if ("stageVariables" in data):
-        data = json.loads(event["body"])
+        data = json.loads(event["body"]) if type(event.body) is str else event["body"]
 
     if ("challenge" in data):
         return_obj["body"] = data["challenge"]
         return return_obj
 
     if ("subscription" not in data or data["subscription"]["status"] != "enabled" or data["subscription"]["type"] != "stream.online"):
-        return_obj["body"] = json.dumps({ "executed": False, "error": "no subscription in request, or subscription type is incorrect.", "debug_event_obj": data, "rqid": context["aws_request_id"] })
+        return_obj["body"] = json.dumps({ "executed": False, "error": "no subscription in request, or subscription type is incorrect.", "debug_event_obj": data })
         return return_obj
 
     mention_str = ('@everyone, ' if DISCORD_ROLE_ID == 'everyone' else '<@&' + DISCORD_ROLE_ID + '>, ')
@@ -57,7 +57,7 @@ def webhook(event, context):
     try:
         result.raise_for_status()
     except requests.exceptions.HTTPError as err:
-        return_obj["body"] = json.dumps({ "executed": False, "error": "discord webhook returned an error. " + err, "rqid": context["aws_request_id"] })
+        return_obj["body"] = json.dumps({ "executed": False, "error": "discord webhook returned an error. " + err })
     else:
         return_obj["body"] = json.dumps({ "executed": True, "rqid": context["aws_request_id"] })
 
