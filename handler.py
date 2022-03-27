@@ -18,7 +18,7 @@ def webhook(event, context):
     # aws api gateway vs directly using lambda
     data = event
     if ("stageVariables" in data):
-        data = json.loads(event["body"]) if type(event.body) is str else event["body"]
+        data = json.loads(event["body"]) if type(event["body"]) is str else event["body"]
 
     if ("challenge" in data):
         return_obj["body"] = data["challenge"]
