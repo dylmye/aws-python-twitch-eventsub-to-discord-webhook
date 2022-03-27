@@ -11,7 +11,7 @@ def webhook(event, context):
 
     return_obj = {
         "statusCode": 200,
-        "body": json.dumps({ "executed": False, "context": context })
+        "body": json.dumps({ "executed": False })
     }
 
     # handle different data shape when using
