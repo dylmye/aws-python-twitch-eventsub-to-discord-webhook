@@ -1,6 +1,6 @@
 <!--
 title: 'AWS Twitch EventSub to Discord Webhook'
-description: 'This template takes go-live events from Twitch EventSub, and publishes the events through a Discord Webhook.'
+description: 'This template takes go-live events from Twitch EventSub, and publishes the events through a Discord webhook.'
 layout: Doc
 framework: v3
 platform: AWS
@@ -12,9 +12,17 @@ authorAvatar: 'https://avatars1.githubusercontent.com/u/7024578?s=200&v=4'
 
 # Serverless Framework Python Twitch EventSub to Discord Webhook on AWS
 
-This template takes go-live events from Twitch EventSub, and publishes the events through a Discord Webhook.
+This template takes go-live events from Twitch EventSub, and publishes the events through a Discord webhook.
 
 ## Usage
+
+### Required Parameters
+
+Set these up in the .env file or pass them as parameters in the monitoring display. Remember that if you are auto-deploying from GitHub etc. your .env file will not be available for the script to read from.
+
+* `DISCORD_WEBHOOK_URL`: This is the URL provided by the Discord webhook you have set up
+* `DISCORD_ROLE_ID`: If you want to @everyone when you go live, set this to "everyone", otherwise set it to the ID of the Discord role that should be @'d.
+* `TWITCH_USERNAME`: This is your Twitch username for users to click on!
 
 ### Deployment
 
@@ -80,3 +88,9 @@ serverless offline
 ```
 
 To learn more about the capabilities of `serverless-offline`, please refer to its [GitHub repository](https://github.com/dherault/serverless-offline).
+
+## Credits
+
+This Serverless template is an adaptation of [this Lambda](https://github.com/dylmye/twitch-golive-discord) I created in 2021 - please also see the credits section there
+
+This README is shamelessly adapted from [aws-node-http-api](https://github.com/serverless/examples/tree/v3/aws-node-http-api)'s README, written by [Matthieu Napoli](https://github.com/mnapoli) for Serverless.
