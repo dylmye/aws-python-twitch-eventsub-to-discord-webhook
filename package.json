@@ -1,7 +1,7 @@
 {
   "name": "aws-python-twitch-eventsub-to-discord",
   "description": "This template takes go-live events from Twitch EventSub, and publishes the events through a Discord Webhook.",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "repository": "github:dylmye/aws-python-twitch-eventsub-to-discord",
   "keywords": [
     "python",
