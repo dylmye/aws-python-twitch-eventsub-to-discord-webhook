@@ -1,10 +1,14 @@
 import json
 import requests
+from os import environ
 from datetime import datetime
-from env import DISCORD_WEBHOOK_URL, DISCORD_ROLE_ID, TWITCH_USERNAME
 
 # take a twitch event and publish a discord message
 def webhook(event, context):
+    DISCORD_WEBHOOK_URL = environ.get("DISCORD_WEBHOOK_URL")
+    DISCORD_ROLE_ID = environ.get("DISCORD_ROLE_ID")
+    TWITCH_USERNAME = environ.get("TWITCH_USERNAME")
+
     return_obj = {
         "statusCode": 200,
         "body": json.dumps({ "executed": False, "rqid": context["aws_request_id"] })

@@ -12,11 +12,13 @@ authorAvatar: 'https://avatars1.githubusercontent.com/u/7024578?s=200&v=4'
 
 # Serverless Framework Python Twitch EventSub to Discord Webhook on AWS
 
-This template takes go-live events from Twitch EventSub, and publishes the events through a Discord Webhook
+This template takes go-live events from Twitch EventSub, and publishes the events through a Discord Webhook.
 
 ## Usage
 
 ### Deployment
+
+> Make sure to make your .env file following the .env.example file!
 
 ```
 $ serverless deploy
@@ -29,7 +31,7 @@ Deploying aws-python-twitch-eventsub-to-discord-webhook to stage dev (us-east-1)
 
 ✔ Service deployed to stack aws-python-twitch-eventsub-to-discord-webhook-dev (140s)
 
-endpoint: GET - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/
+endpoint: GET - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/webhook
 functions:
   handler: aws-python-twitch-eventsub-to-discord-webhook-dev-webhook (2.3 kB)
 ```

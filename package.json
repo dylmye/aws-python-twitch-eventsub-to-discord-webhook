@@ -14,6 +14,7 @@
   "author": "Dylan Myers",
   "license": "ISC",
   "dependencies": {
+    "serverless": ">3.0.0",
     "serverless-python-requirements": "5.4.0"
   },
   "bugs": {
