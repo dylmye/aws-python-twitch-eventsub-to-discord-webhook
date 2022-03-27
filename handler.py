@@ -59,6 +59,6 @@ def webhook(event, context):
     except requests.exceptions.HTTPError as err:
         return_obj["body"] = json.dumps({ "executed": False, "error": "discord webhook returned an error. " + err })
     else:
-        return_obj["body"] = json.dumps({ "executed": True, "rqid": context["aws_request_id"] })
+        return_obj["body"] = json.dumps({ "executed": True })
 
     return return_obj
