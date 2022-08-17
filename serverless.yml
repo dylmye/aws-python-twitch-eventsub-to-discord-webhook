@@ -1,5 +1,3 @@
-org: dylanm
-app: aws-python-twitch-eventsub-to-discord
 service: aws-python-twitch-eventsub-to-discord
 frameworkVersion: '3'
 useDotenv: true
@@ -7,6 +5,8 @@ useDotenv: true
 provider:
   name: aws
   runtime: python3.8
+  httpApi:
+    cors: true
 
 functions:
   webhook:
@@ -16,17 +16,20 @@ functions:
       DISCORD_ROLE_ID: ${env:DISCORD_ROLE_ID}
       TWITCH_USERNAME: ${env:TWITCH_USERNAME}
     events:
-      - http:
+      - httpApi:
           path: webhook
           method: POST
-          cors: true
-
 
 plugins:
   - serverless-python-requirements
+  - serverless-plugin-common-excludes
+  - serverless-plugin-include-dependencies
 
 custom:
   pythonRequirements:
+    zip: true
     slim: true
     useDownloadCache: true
     useStaticCache: true
+  includeDependencies:
+    enableCaching: true

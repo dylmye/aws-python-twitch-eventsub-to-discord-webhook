@@ -1,7 +1,7 @@
 {
   "name": "aws-python-twitch-eventsub-to-discord",
   "description": "This template takes go-live events from Twitch EventSub, and publishes the events through a Discord Webhook.",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "repository": "github:dylmye/aws-python-twitch-eventsub-to-discord",
   "keywords": [
     "python",
@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/dylmye/aws-python-twitch-eventsub-to-discord/issues"
   },
-  "homepage": "https://github.com/dylmye/aws-python-twitch-eventsub-to-discord#readme"
+  "homepage": "https://github.com/dylmye/aws-python-twitch-eventsub-to-discord#readme",
+  "devDependencies": {
+    "serverless-plugin-common-excludes": "^4.0.0",
+    "serverless-plugin-include-dependencies": "^5.0.0"
+  }
 }

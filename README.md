@@ -28,8 +28,18 @@ Set these up in the .env file or pass them as parameters in the monitoring displ
 
 > Make sure to make your .env file following the .env.example file!
 
+First, either run the below script to download this template (recommended), or clone this repository.
 ```
-$ serverless deploy
+$ serverless create \
+  --template-url https://github.com/dylmye/aws-python-twitch-eventsub-to-discord-webhook \
+  --path myService
+```
+
+Set up your .env file, then run these scripts to set up the service in your Serverless org:
+
+```
+$ yarn
+$ serverless
 ```
 
 After deploying, you should see output similar to:
@@ -44,7 +54,7 @@ functions:
   handler: aws-python-twitch-eventsub-to-discord-webhook-dev-webhook (2.3 kB)
 ```
 
-_Note_: In current form, after deployment, your API is public and can be invoked by anyone. For production deployments, you might want to configure an authorizer. For details on how to do that, refer to [http event docs](https://www.serverless.com/framework/docs/providers/aws/events/apigateway/).
+_Note_: In current form, after deployment, your API is public and can be invoked by anyone. For production deployments, you might want to configure an authorizer. For details on how to do that, refer to [httpApi event docs](https://www.serverless.com/framework/docs/providers/aws/events/http-api#jwt-authorizers).
 
 ### Invocation
 
@@ -54,7 +64,7 @@ _Note_: In current form, after deployment, your API is public and can be invoked
 * An API client, like [Postman](https://www.postman.com/downloads/) or [Insomnia](https://insomnia.rest/download)
 * 5 minutes of your time
 
-You need to [subscribe your deployment to a Twitch Event](https://dev.twitch.tv/docs/eventsub). For our use case here, we want to subscribe to [`stream.online`](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types/#streamonline) for a specific channel. Instructions on how to do this are available as [step 7 and step 8 in this guide](https://dylmye.me/2021/03/08/twitch-discord/). The `transport.callback` value should be the `endpoint` from the deploy output above.
+You need to [subscribe your deployment to a Twitch Event](https://dev.twitch.tv/docs/eventsub/manage-subscriptions). For our use case here, we want to subscribe to [`stream.online`](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types/#streamonline) for a specific channel. Instructions on how to do this are available as [step 7 and step 8 in this guide](https://dylmye.me/2021/03/08/twitch-discord/). The `transport.callback` value should be the `endpoint` from the deploy output above.
 
 ### Local development
 

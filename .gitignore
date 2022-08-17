@@ -4,6 +4,7 @@ __pycache__
 .serverless
 serverless_sdk/
 s_webhook.py
+.requirements.zip
 
 # Distribution / packaging
 .Python
