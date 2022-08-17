@@ -17,7 +17,7 @@ functions:
       TWITCH_USERNAME: ${env:TWITCH_USERNAME}
     events:
       - httpApi:
-          path: webhook
+          path: /webhook
           method: POST
 
 plugins:
