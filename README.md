@@ -21,7 +21,7 @@ This template takes go-live events from Twitch EventSub, and publishes the event
 Set these up in the .env file or pass them as parameters in the monitoring display. Remember that if you are auto-deploying from GitHub etc. your .env file will not be available for the script to read from.
 
 * `DISCORD_WEBHOOK_URL`: This is the URL provided by the Discord webhook you have set up
-* `DISCORD_ROLE_ID`: If you want to @everyone when you go live, set this to "everyone", otherwise set it to the ID of the Discord role that should be @'d.
+* `DISCORD_ROLE_ID`: If you want to @everyone when you go live, set this to "everyone", otherwise set it to the ID of the Discord role that should be @'d. You can also set it to "nobody" if you want... nobody to be pinged.
 * `TWITCH_USERNAME`: This is your Twitch username for users to click on!
 
 ### Deployment
