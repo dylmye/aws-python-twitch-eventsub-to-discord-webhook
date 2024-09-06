@@ -14,8 +14,8 @@
   "author": "Dylan Myers",
   "license": "ISC",
   "dependencies": {
-    "serverless": ">3.0.0",
-    "serverless-python-requirements": "5.4.0"
+    "serverless": "4.0.0",
+    "serverless-python-requirements": "6.0.0"
   },
   "bugs": {
     "url": "https://github.com/dylmye/aws-python-twitch-eventsub-to-discord/issues"
